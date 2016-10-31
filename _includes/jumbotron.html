@@ -1,0 +1,19 @@
+{% if page.isHome %}
+    <div class="bs-docs-masthead" id="content">
+        <div class="container">
+            <h1 class="home-title">{{ site.name }}</h1>
+            <p class="lead">{{ page.description }}</p>
+            <p class="lead">
+                <a href="{{site.downloadUrl}}" class="btn btn-outline-inverse btn-lg">Download</a>
+            </p>
+            <p class="version">Currently v{{site.version}}</p>
+        </div>
+    </div>
+{% else %}
+    <div class="bs-docs-header" id="content">
+        <div class="container">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+        </div>
+    </div>
+{% endif %}
