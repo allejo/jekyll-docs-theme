@@ -1,52 +1,49 @@
 # name of the software
-name: Jekyll Bootstrap Doc
-# current version of the software
-version: 0.1.0
-# url of the download button
-downloadUrl: https://github.com/allejo/jekyll-docs-theme/releases
-# licence of the software
-license: MIT License
-licenseUrl: http://opensource.org/licenses/MIT
+name: Jekyll Docs Theme
 
-# list of additional links on the right of the top menu
-headerLinks:
-  - title: GitHub
-    url: https://github.com/allejo/jekyll-docs-theme
+project:
+    version: 0.1.0
+    download_url: https://github.com/allejo/jekyll-docs-theme/releases
 
-# list if additional links on the footer
-footerLinks:
-  - title: GitHub
-    url: https://github.com/allejo/jekyll-docs-theme
-  - title: Issues
-    url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
+license:
+    software: MIT License
+    software_url: http://opensource.org/licenses/MIT
 
-# header
-header:
-  color1: "#080331"
-  color2: "#673051"
-  trianglify: true
+    docs: CC BY 3.0
+    docs_url: http://creativecommons.org/licenses/by/3.0/
+
+links:
+    header:
+      - title: GitHub
+        url: https://github.com/allejo/jekyll-docs-theme
+    footer:
+      - title: GitHub
+        url: https://github.com/allejo/jekyll-docs-theme
+      - title: Issues
+        url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
+
+ui:
+    header:
+        color1: "#080331"
+        color2: "#673051"
+        trianglify: true
+
+social:
+    github:
+        user: allejo
+        repo: jekyll-docs-theme
+    twitter:
+        enabled: false
+        via:
+        hash:
+        account:
+    facebook:
+        enabled: false
+        profileUrl:
 
 # google analytics
 analytics:
-  account:
-  domain:
-
-# github buttons
-githubButton:
-  user: mistic100
-  repo: jekyll-bootstrap-doc
-
-# twitter buttons
-twitter:
-  enabled: true
-  via:
-  hash:
-  account:
-
-# facebook buttons
-facebook:
-  enabled: true
-  profileUrl:
-
+    account:
+    domain:
 
 theme: jekyll-docs-theme
