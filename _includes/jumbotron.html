@@ -1,4 +1,4 @@
-{% if page.isHome %}
+{% if page.homepage %}
     <div class="bs-docs-masthead" id="jumbotron-header">
         <div class="container">
             <h1 class="home-title">{{ site.name }}</h1>
@@ -6,7 +6,7 @@
             <p class="lead">
                 <a href="{{ site.project.download_url }}" class="btn btn-outline-inverse btn-lg">Download</a>
             </p>
-            <p class="version">Currently v{{site.version}}</p>
+            <p class="version">Currently v{{ site.project.version }}</p>
         </div>
     </div>
 {% else %}
