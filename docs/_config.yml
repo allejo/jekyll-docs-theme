@@ -41,9 +41,13 @@ social:
         enabled: false
         profileUrl:
 
-# google analytics
 analytics:
     account:
     domain:
 
+# Build settings
+markdown: kramdown
 theme: jekyll-docs-theme
+exclude:
+    - Gemfile
+    - Gemfile.lock

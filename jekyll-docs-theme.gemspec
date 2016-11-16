@@ -10,9 +10,14 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/allejo/jekyll-docs-theme"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i) }
+  spec.metadata["plugin_type"] = "theme"
 
-  spec.add_development_dependency "jekyll", "~> 3.3"
+  spec.files         = `git ls-files -z`.split("\x0").select do |f|
+    f.match(%r{^(assets|_(includes|layouts|sass)/|(LICENSE|README)((\.(txt|md|markdown)|$)))}i)
+  end
+
+  spec.add_runtime_dependency "jekyll", "~> 3.3"
+
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
 end
