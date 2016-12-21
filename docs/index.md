@@ -103,3 +103,52 @@ links:
 | ----- | ----------- |
 | `title` | The textual representation of the URL |
 | `url` | The URL of the link |
+
+## UI
+
+The ui object will contain all the settings in regards to the aesthetics of the website
+
+```yaml
+ui:
+  header:
+    color1: "#080331"
+    color2: "#673051"
+    trianglify: true
+```
+
+{:.table}
+| field | description |
+| ----- | ----------- |
+| `color1` & `color2` | The two colors that will create the gradient of the page header |
+| `trianglify` | When set to true, the page header will be a generated triangular pattern |
+
+## Analytics
+
+```yaml
+analytics:
+    google: UA-123456-1
+```
+
+{:.table}
+| field | description |
+| ----- | ----------- |
+| `google` | The unique identifier for Google Analytics; typically looks like `U-123456-1`
+
+## Social
+
+Options for configuring buttons to "like", "tweet" or "star" this site with the respective social media websites.
+
+```yaml
+social:
+  github:
+    user: allejo
+    repo: jekyll-docs-theme
+  twitter:
+    enabled: false
+    via:
+    hash:
+    account:
+  facebook:
+    enabled: false
+    profileUrl:
+```
