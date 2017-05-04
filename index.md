@@ -34,7 +34,7 @@ $ bundle
 Or install it yourself as:
 
 ```
-$ gem install jekyll-bootstrap-doc
+$ gem install jekyll-docs-theme
 ```
 
 <div class="alert alert-warning" markdown="1">
