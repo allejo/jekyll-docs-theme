@@ -1,6 +1,6 @@
 # Jekyll Docs Theme
 
-> This is a [Jekyll theme](https://github.com/allejo/jekyll-docs-theme) based on [mistic100's modification](https://github.com/mistic100/jekyll-docs-theme) of the official Bootstrap documentation from a few years back.
+> This is a [Jekyll theme](https://github.com/allejo/jekyll-docs-theme) based on [mistic100's modification](https://github.com/mistic100/jekyll-bootstrap-doc) of the official Bootstrap documentation from a few years back.
 
 Jekyll Docs Theme is provided as a theme for writing documentation for your projects instead of having a single large README file or several markdown files stored in a not so user-friendly manner.
 
@@ -34,7 +34,7 @@ Or install it yourself as:
 
 To set up your environment to develop this theme, run `bundle install`.
 
-To develop on this theme, run `rake preview` and open your browser at `http://localhost:4000`. The project website for this project uses this theme itself and is available in the `docs/` folder.
+To develop on this theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`.
 
 ## License
 
