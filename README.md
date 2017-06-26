@@ -10,6 +10,10 @@ This theme is still in development but is kept fairly stable; just note, there a
 
 ## Installation
 
+Fork this project
+
+-or-
+
 Add this line to your Jekyll site's Gemfile:
 
 ```ruby
