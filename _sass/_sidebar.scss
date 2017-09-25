@@ -1,0 +1,71 @@
+.bs-docs-sidenav {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.bs-docs-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+
+    @media (min-width:768px) {
+        padding-left: 20px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul > .active > a,
+    ul > .active:focus > a,
+    ul > .active:hover > a {
+        background-color: transparent;
+        border-left: 2px solid #563d7c;
+        color: #563d7c;
+        font-weight: 700;
+        padding-left: 18px;
+    }
+
+    ul > li > a {
+        color: #999;
+        display: block;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 4px 20px;
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            border-left: 1px solid #563d7c;
+            color: #563d7c;
+            padding-left: 19px;
+            text-decoration: none;
+        }
+    }
+
+    ul ul {
+        display: none;
+        padding-bottom: 10px;
+        padding-left: 0;
+    }
+
+    ul ul > li > a {
+        font-size: 14px;
+        font-weight: 400;
+        padding-bottom: 1px;
+        padding-left: 30px;
+        padding-top: 1px;
+
+        &:hover,
+        &:focus {
+            padding-left: 29px;
+        }
+    }
+
+    ul ul > .active > a,
+    ul ul > .active:hover > a,
+    ul ul > .active:focus > a {
+        font-weight: 500;
+        padding-left: 28px;
+    }
+}
