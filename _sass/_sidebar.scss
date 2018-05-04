@@ -8,14 +8,6 @@
     position: sticky;
     top: 20px;
 
-    @media (min-width:768px) {
-        padding-left: 20px;
-    }
-
-    ul {
-        list-style: none;
-    }
-
     ul > .active > a,
     ul > .active:focus > a,
     ul > .active:hover > a {
@@ -24,6 +16,10 @@
         color: #563d7c;
         font-weight: 700;
         padding-left: 18px;
+    }
+
+    ul > li {
+        display: block;
     }
 
     ul > li > a {

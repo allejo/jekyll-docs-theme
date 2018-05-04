@@ -958,12 +958,12 @@ h1[id] {
     margin-bottom: 0;
     background-color: transparent;
     border: 0;
-    white-space: nowrap
 }
 
 .highlight pre code {
     font-size: inherit;
-    color: #333
+    color: #333;
+    white-space: pre;
 }
 
 .highlight pre .lineno {

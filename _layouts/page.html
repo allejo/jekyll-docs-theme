@@ -5,15 +5,19 @@ layout: default
 <div class="container">
     <div class="bs-docs-container row">
         <div class="col-md-9" role="main">
-            <div class="bs-docs-section">{{ content }}</div>
+            <div class="bs-docs-section">
+                {{ content }}
+            </div>
         </div>
 
-        <div class="col-md-3 bs-docs-sidebar hidden-print" role="complementary">
-            {% include toc.html html=content class="nav.bs-docs-sidenav" h_max=3 %}
+        <div class="col-md-3 hidden-print">
+            <nav id="page-toc" class="bs-docs-sidebar">
+                {% include toc.html html=content class="list-unstyled.bs-docs-sidenav" h_max=3 %}
 
-            <a class="back-to-top" href="#top"> <i class="glyphicon glyphicon-chevron-up"></i>
-                Back to top
-            </a>
+                <a class="back-to-top" href="#top">
+                    Back to top
+                </a>
+            </nav>
         </div>
     </div>
 
