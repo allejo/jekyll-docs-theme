@@ -6,7 +6,9 @@
             <p class="lead">
                 <a href="{{ site.project.download_url }}" class="btn btn-outline-inverse btn-lg">Download</a>
             </p>
-            <p class="version">Currently v{{ site.project.version }}</p>
+            {% if site.project.version %}
+                <p class="version">Currently v{{ site.project.version }}</p>
+            {% endif %}
         </div>
     </div>
 {% else %}
