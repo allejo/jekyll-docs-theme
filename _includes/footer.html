@@ -65,7 +65,9 @@
         </p>
 
         <ul class="bs-docs-footer-links muted">
-            <li>Currently v{{ site.project.version }}</li>
+            {% if site.project.version %}
+                <li>Currently v{{ site.project.version }}</li>
+            {% endif %}
             {% for l in site.links.footer %}
                 <li>&middot;</li>
                 <li>
