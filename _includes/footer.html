@@ -5,14 +5,14 @@
                 {% if site.social.github.user and site.social.github.repo %}
                     <li>
                         <iframe class="github-btn"
-                                src="http://ghbtns.com/github-btn.html?user={{ site.social.github.user }}&amp;repo={{ site.social.github.repo }}&amp;type=watch&amp;count=true"
+                                src="https://ghbtns.com/github-btn.html?user={{ site.social.github.user }}&amp;repo={{ site.social.github.repo }}&amp;type=watch&amp;count=true"
                                 width="90"
                                 height="20"
                                 title="Star on GitHub"></iframe>
                     </li>
                     <li>
                         <iframe class="github-btn"
-                                src="http://ghbtns.com/github-btn.html?user={{ site.social.github.user }}&amp;repo={{ site.social.github.repo }}&amp;type=fork&amp;count=true"
+                                src="https://ghbtns.com/github-btn.html?user={{ site.social.github.user }}&amp;repo={{ site.social.github.repo }}&amp;type=fork&amp;count=true"
                                 width="90"
                                 height="20"
                                 title="Fork on GitHub"></iframe>
@@ -65,7 +65,9 @@
         </p>
 
         <ul class="bs-docs-footer-links muted">
-            <li>Currently v{{ site.project.version }}</li>
+            {% if site.project.version %}
+                <li>Currently v{{ site.project.version }}</li>
+            {% endif %}
             {% for l in site.links.footer %}
                 <li>&middot;</li>
                 <li>
