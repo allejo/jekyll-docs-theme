@@ -1525,3 +1525,8 @@ h1[id] {
 .css .o, .css .o+.nt, .css .nt+.nt {
     color: #999
 }
+
+.embed-frame {
+    margin: auto;
+    border-width: 0px;
+}
