@@ -1,7 +1,21 @@
 ---
 layout: embed
 ---
-{% include navigation.html %}
-<div class="container bs-docs-container">
-  <iframe src={{ page.embedurl }}></iframe>
-</div>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        {% include head.html %}
+    </head>
+
+    <body>
+        {% include navigation.html %}
+        <!-- {% include jumbotron.html %} -->
+
+        <!-- {{ content }} -->
+        <div class="container bs-docs-container">
+          <iframe src={{ page.embedurl }}></iframe>
+        </div>
+    </body>
+</html>
+
+<!-- {% include navigation.html %} -->
