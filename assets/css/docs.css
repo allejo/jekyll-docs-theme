@@ -1530,6 +1530,7 @@ h1[id] {
 
     border: 0;
     margin: auto;
+    bottom: 0px;
     width:100%;
     height:100%;
 
