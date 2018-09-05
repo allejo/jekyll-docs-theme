@@ -40,7 +40,6 @@
     }
 
     ul ul {
-        display: none;
         padding-bottom: 10px;
         padding-left: 0;
     }
@@ -63,5 +62,11 @@
     ul ul > .active:focus > a {
         font-weight: 500;
         padding-left: 28px;
+    }
+}
+
+.js .bs-docs-sidebar {
+    ul ul {
+        display: none;
     }
 }
