@@ -1,14 +1,11 @@
-.js .bs-docs-sidebar {
+// Only hide nested ULs if they are accessible via JS
+.js .page-sidebar {
     ul ul {
         display: none;
     }
 }
 
-.bs-docs-section {
-    position: relative;
-}
-
-.bs-docs-sidebar {
+.page-sidebar {
     position: -webkit-sticky;
     position: sticky;
     top: 20px;
@@ -19,35 +16,46 @@
         & ul {
             font-size: 90%;
         }
-    }
 
-    li {
-        list-style: none;
-    }
-
-    a {
-        border-left: $sidebar-highlight-width solid transparent;
-        color: #999;
-        display: block;
-        font-weight: 500;
-        padding: 4px 10px;
-
-        &:focus,
-        &:hover {
-            background-color: transparent;
-            color: $sidebar-highlight-color;
+        li {
+            list-style: none;
         }
 
-        &.active,
-        &.active:focus,
-        &.active:hover {
-            border-left-color: $sidebar-highlight-color;
-            color: $sidebar-highlight-color;
-            font-weight: 700;
-        }
-
-        &.active + ul {
+        a {
+            color: #999;
             display: block;
+            font-weight: 500;
+            position: relative;
+
+            &:focus,
+            &:hover {
+                background-color: transparent;
+                color: $sidebar-highlight-color;
+            }
+
+            &.active,
+            &.active:focus,
+            &.active:hover {
+                color: $sidebar-highlight-color;
+                font-weight: 700;
+
+                // In order to prevent being affected by the extra width misaligning
+                // content, we'll do position absolute the border.
+                &::before {
+                    border-left: $sidebar-highlight-width solid $sidebar-highlight-color;
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                }
+            }
+
+            // Unhide any nested ULs when this TOC section is active
+            &.active + ul {
+                display: block;
+            }
         }
     }
 }
