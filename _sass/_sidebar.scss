@@ -1,6 +1,11 @@
-.bs-docs-sidenav {
-    margin-bottom: 20px;
-    margin-top: 20px;
+.js .bs-docs-sidebar {
+    ul ul {
+        display: none;
+    }
+}
+
+.bs-docs-section {
+    position: relative;
 }
 
 .bs-docs-sidebar {
@@ -8,65 +13,41 @@
     position: sticky;
     top: 20px;
 
-    ul > .active > a,
-    ul > .active:focus > a,
-    ul > .active:hover > a {
-        background-color: transparent;
-        border-left: 2px solid #563d7c;
-        color: #563d7c;
-        font-weight: 700;
-        padding-left: 18px;
+    ul {
+        padding-left: 15px;
+
+        & ul {
+            font-size: 90%;
+        }
     }
 
-    ul > li {
-        display: block;
+    li {
+        list-style: none;
     }
 
-    ul > li > a {
+    a {
+        border-left: $sidebar-highlight-width solid transparent;
         color: #999;
         display: block;
-        font-size: 15px;
         font-weight: 500;
-        padding: 4px 20px;
+        padding: 4px 10px;
 
-        &:hover,
-        &:focus {
+        &:focus,
+        &:hover {
             background-color: transparent;
-            border-left: 1px solid #563d7c;
-            color: #563d7c;
-            padding-left: 19px;
-            text-decoration: none;
+            color: $sidebar-highlight-color;
         }
-    }
 
-    ul ul {
-        padding-bottom: 10px;
-        padding-left: 0;
-    }
-
-    ul ul > li > a {
-        font-size: 14px;
-        font-weight: 400;
-        padding-bottom: 1px;
-        padding-left: 30px;
-        padding-top: 1px;
-
-        &:hover,
-        &:focus {
-            padding-left: 29px;
+        &.active,
+        &.active:focus,
+        &.active:hover {
+            border-left-color: $sidebar-highlight-color;
+            color: $sidebar-highlight-color;
+            font-weight: 700;
         }
-    }
 
-    ul ul > .active > a,
-    ul ul > .active:hover > a,
-    ul ul > .active:focus > a {
-        font-weight: 500;
-        padding-left: 28px;
-    }
-}
-
-.js .bs-docs-sidebar {
-    ul ul {
-        display: none;
+        &.active + ul {
+            display: block;
+        }
     }
 }
