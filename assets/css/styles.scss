@@ -3,9 +3,14 @@
 
 @import 'variables';
 
+// Components
 @import 'alert';
 @import 'highlight';
+@import 'mobile-toc';
 @import 'sidebar';
+
+// Utilities
+@import 'js';
 
 #jumbotron-header {
     background: {{ site.ui.header.color1 }};
@@ -35,8 +40,4 @@
 
 .back-top-top {
   font-size: 13px;
-}
-
-.bs-docs-container {
-    position: relative;
 }
