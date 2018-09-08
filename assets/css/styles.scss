@@ -6,38 +6,14 @@
 // Components
 @import 'alert';
 @import 'highlight';
+@import 'masthead';
 @import 'mobile-toc';
 @import 'sidebar';
 
 // Utilities
 @import 'js';
 
-#jumbotron-header {
+.site-masthead {
     background: {{ site.ui.header.color1 }};
     background: linear-gradient(135deg, {{ site.ui.header.color1 }}, {{ site.ui.header.color2 }});
-    position: relative;
-
-    &::after {
-        background: linear-gradient(135deg, transparent 50px, white 50px);
-        bottom: 0;
-        content: "";
-        height: 50px;
-        position: absolute;
-        right: 0;
-        width: 30%;
-    }
-}
-
-.bs-docs-masthead {
-  padding-top: 50px;
-  padding-bottom: 40px;
-  margin-bottom: 20px;
-}
-
-.bs-docs-header h1, .bs-docs-header p {
-  margin-right: 0;
-}
-
-.back-top-top {
-  font-size: 13px;
 }

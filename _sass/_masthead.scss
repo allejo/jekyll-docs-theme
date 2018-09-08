@@ -1,0 +1,14 @@
+.site-masthead {
+    position: relative;
+    color: white;
+
+    &::after {
+        background: linear-gradient(135deg, transparent 50px, white 50px);
+        bottom: 0;
+        content: "";
+        height: 50px;
+        position: absolute;
+        right: 0;
+        width: 30%;
+    }
+}

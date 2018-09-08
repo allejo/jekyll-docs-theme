@@ -1,6 +1,7 @@
 ---
 layout: page
 homepage: true
+description: A pleasantly subpar Jekyll theme
 ---
 
 # Overview

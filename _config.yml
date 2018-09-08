@@ -2,8 +2,9 @@
 name: Jekyll Docs Theme
 
 project:
-    version: 0.1.0
+    version: 1.0.0-dev
     download_url: https://github.com/allejo/jekyll-docs-theme/releases
+    download_text: Download
 
 license:
     software: MIT License
