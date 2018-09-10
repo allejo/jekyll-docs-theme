@@ -1,2 +1,4 @@
-$sidebar-highlight-color: #563d7c;
+$brand-color: #563d7c !default;
+
+$sidebar-highlight-color: $brand-color !default;
 $sidebar-highlight-width: 2px !default;

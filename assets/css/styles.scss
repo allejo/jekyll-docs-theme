@@ -3,6 +3,12 @@
 
 @import 'variables';
 
+// Utilities
+@import 'utilities/colors';
+
+// Base Styles
+@import 'base';
+
 // Components
 @import 'alert';
 @import 'buttons';

@@ -82,36 +82,6 @@
     border-color: #f9f9f9
 }
 
-.bs-docs-footer {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-top: 100px;
-    color: #777;
-    text-align: center;
-    border-top: 1px solid #e5e5e5
-}
-
-.bs-docs-footer-links {
-    margin-top: 20px;
-    padding-left: 0;
-    color: #999
-}
-
-.bs-docs-footer-links li {
-    display: inline;
-    padding: 0 2px
-}
-
-.bs-docs-footer-links li:first-child {
-    padding-left: 0
-}
-
-@media (min-width:768px) {
-    .bs-docs-footer p {
-        margin-bottom: 0
-    }
-}
-
 .bs-docs-social {
     margin-bottom: 20px;
     text-align: center
