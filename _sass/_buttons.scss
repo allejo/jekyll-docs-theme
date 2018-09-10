@@ -1,0 +1,28 @@
+.btn-outline {
+    background-color: transparent;
+    border-color: $brand-color;
+    color: $brand-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $brand-color;
+        border-color: $brand-color;
+        color: choose-contrast-color($brand-color);
+    }
+}
+
+.btn-outline-inverse {
+    background-color: transparent;
+    border-color: #cdbfe3;
+    color: choose-contrast-color($brand-color);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: choose-contrast-color($brand-color);
+        border-color: choose-contrast-color($brand-color);
+        color: $brand-color;
+        text-shadow: none;
+    }
+}

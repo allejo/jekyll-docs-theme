@@ -5,42 +5,10 @@
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
 
-body {
-    position: relative
-}
 
 .table code {
     font-size: 13px;
     font-weight: 400
-}
-
-.btn-outline {
-    color: #563d7c;
-    background-color: transparent;
-    border-color: #563d7c
-}
-
-.btn-outline:hover,
-.btn-outline:focus,
-.btn-outline:active {
-    color: #fff;
-    background-color: #563d7c;
-    border-color: #563d7c
-}
-
-.btn-outline-inverse {
-    color: #fff;
-    background-color: transparent;
-    border-color: #cdbfe3
-}
-
-.btn-outline-inverse:hover,
-.btn-outline-inverse:focus,
-.btn-outline-inverse:active {
-    color: #563d7c;
-    text-shadow: none;
-    background-color: #fff;
-    border-color: #fff
 }
 
 .bs-docs-booticon {
