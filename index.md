@@ -13,6 +13,34 @@ This theme is still in development but is kept fairly stable; just note, there a
 
 # Installation
 
+## Remote Theme
+
+This theme supports [jekyll-remote-theme](https://github.com/benbalter/jekyll-remote-theme).
+
+1. Add the following to your Gemfile
+
+  ```ruby
+  gem "jekyll-remote-theme"
+  ```
+
+  and run `bundle install` to install the plugin
+
+2. Add the following to your site's `_config.yml` to activate the plugin
+
+  ```yml
+  plugins:
+    - jekyll-remote-theme
+  ```
+  Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
+
+3. Add the following to your site's `_config.yml` to choose your theme
+
+  ```yml
+  remote_theme: allejo/jekyll-docs-theme
+  ```
+
+## Gem Based
+
 Add this line to your Jekyll site's Gemfile:
 
 ```ruby
@@ -37,13 +65,9 @@ Or install it yourself as:
 $ gem install jekyll-docs-theme
 ```
 
-<div class="alert alert-warning" markdown="1">
-**Warning:** Custom [themes are not supported on GitHub Pages](https://pages.github.com/themes/) at the time of writing this, so you may either build your site on another platform or simply fork this repo and build upon it as you would any other theme.
-</div>
-
 # Configuration Options
 
-A sample [`_config.yml`](https://github.com/allejo/jekyll-docs-theme/blob/master/docs/_config.yml) file is available with all of the available fields; documentation and more information for each of those fields is available below.
+A sample [`_config.yml`](https://github.com/allejo/jekyll-docs-theme/blob/master/_config.yml) file is available with all of the available fields; documentation and more information for each of those fields is available below.
 
 ## Project
 
