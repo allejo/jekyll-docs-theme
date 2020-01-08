@@ -7,10 +7,10 @@ project:
 
 license:
     software: MIT License
-    software_url: http://opensource.org/licenses/MIT
+    software_url: https://opensource.org/licenses/MIT
 
     docs: CC BY 3.0
-    docs_url: http://creativecommons.org/licenses/by/3.0/
+    docs_url: https://creativecommons.org/licenses/by/3.0/
 
 links:
     header:
