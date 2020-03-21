@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Configuration File Options
+title: Theme Configuration
 ---
 
 This project can be configured to look and behave differently by toggling and setting options in your `_config.yml` file. All these options are optional and have defaults set in place if any of them are are not set.
