@@ -1,0 +1,45 @@
+.scope-markdown {
+    h1, h2, h3,
+    h4, h5, h6 {
+        .heading-anchor {
+            border-bottom: 0;
+            font-size: 0.8em;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+
+        &:hover {
+            .heading-anchor {
+                opacity: 1;
+            }
+        }
+    }
+
+    h2 {
+        border-bottom: 1px solid $site-theme-border-color;
+        margin-bottom: 1.25rem;
+        margin-top: 2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    table {
+        width: 100%;
+
+        thead {
+            border-bottom: 2px solid $site-theme-accent;
+        }
+
+        tr {
+            border-bottom: 1px solid $site-theme-border-color;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        td,
+        th {
+            padding: 0.5rem 0.25rem;
+        }
+    }
+}

@@ -25,6 +25,7 @@ links:
 
 ui:
   accent: "#a20000"
+  border_color: "#dee2e6"
   header:
     color1: "#080331"
     color2: "#673051"

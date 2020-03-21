@@ -1,6 +1,8 @@
 .site-masthead {
-    position: relative;
+    background: $site-theme-color1;
+    background: linear-gradient(135deg, $site-theme-color1, $site-theme-color2);
     color: white;
+    position: relative;
 
     &::after {
         background: linear-gradient(135deg, transparent 50px, white 50px);

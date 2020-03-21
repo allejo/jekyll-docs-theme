@@ -8,6 +8,7 @@ layout: default
             <section class="mobile-toc border p-3 d-md-none">
                 <div class="d-flex align-items-center">
                     <h2 class="mb-0">Table of Contents</h2>
+
                     <button class="js-only ml-2 toggle-toc">
                         <span data-role="toggle">Hide</span>
                         <span class="sr-only">table of contents</span>
@@ -17,8 +18,8 @@ layout: default
                 {% include toc.html html=content class="js-toc.mb-0.mt-2" h_max=3 %}
             </section>
 
-            <section>
-                {{ content }}
+            <section class="scope-markdown">
+                {% include anchor_headings.html html=content anchorBody="#" anchorClass="heading-anchor" %}
             </section>
         </main>
 

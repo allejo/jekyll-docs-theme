@@ -3,8 +3,15 @@
 
 @import 'abstracts/variables';
 
+$site-theme-accent: {{ site.ui.accent }};
+$site-theme-border-color: {{ site.ui.border_color }};
+$site-theme-color1: {{ site.ui.header.color1 }};
+$site-theme-color2: {{ site.ui.header.color2 }};
+
 // Base Styles
+@import 'base/anchor';
 @import 'base/body';
+@import 'base/table';
 
 // Components
 @import 'components/alert';
@@ -18,18 +25,3 @@
 // Utilities
 @import 'utilities/colors';
 @import 'utilities/js';
-
-//
-// Styles configured via _config.yml
-// ---------------------------------
-
-a {
-    border-bottom: 1px dashed currentColor;
-    color: {{ site.ui.accent }};
-    text-decoration: none;
-}
-
-.site-masthead {
-    background: {{ site.ui.header.color1 }};
-    background: linear-gradient(135deg, {{ site.ui.header.color1 }}, {{ site.ui.header.color2 }});
-}
