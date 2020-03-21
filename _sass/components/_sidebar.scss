@@ -10,6 +10,10 @@
     position: sticky;
     top: 20px;
 
+    a {
+        border-bottom: 0;
+    }
+
     ul {
         padding-left: 15px;
 
@@ -22,6 +26,7 @@
         }
 
         a {
+            border-bottom: 0;
             color: #999;
             display: block;
             font-weight: 500;
