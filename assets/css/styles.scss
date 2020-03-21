@@ -11,7 +11,7 @@ $site-theme-color2: {{ site.ui.header.color2 }};
 // Base Styles
 @import 'base/anchor';
 @import 'base/body';
-@import 'base/table';
+@import 'base/scope-markdown';
 
 // Components
 @import 'components/alert';
