@@ -1,18 +1,22 @@
 ---
-layout: page
+layout: full
 homepage: true
-description: A pleasantly subpar Jekyll theme
+description: If mediocrity had a Jekyll theme...
 ---
 
-# Overview
+A Jekyll theme inspired by Bootstrap's official documentation theme from a few years back. This theme started off by stealing all of Bootstrap Docs' CSS and being used in [mistic100's theme](https://github.com/mistic100/jekyll-bootstrap-doc). This theme has since be rewritten from scratch and remains solely inspired by the original design.
 
-> This is a [Jekyll theme](https://github.com/allejo/jekyll-docs-theme) based on [mistic100's modification](https://github.com/mistic100/jekyll-bootstrap-doc) of the official Bootstrap documentation from a few years back.
+This theme is designed for writing documentation websites instead of having large unmaintainable README files or several markdown files inside of a folder in a repository.
 
-Jekyll Docs Theme is provided as a theme for writing documentation for your projects instead of having a single large README file or several markdown files stored in a not so user-friendly manner.
+<div class="row">
+<div class="col-md-6" markdown="1">
 
-This theme is still in development but is kept fairly stable; just note, there are a lot things yet to come.
+## Installation
+{:.mt-0}
 
-# Installation
+This theme is designed to work both as a Gem or as a remote theme, meaning we officially support GitHub Pages.
+
+### Gem
 
 Add this line to your Jekyll site's Gemfile:
 
@@ -20,28 +24,34 @@ Add this line to your Jekyll site's Gemfile:
 gem "jekyll-docs-theme"
 ```
 
+### GitHub Pages
+
 And add this line to your Jekyll site's _config.yml:
 
 ```yaml
 theme: jekyll-docs-theme
 ```
 
-And then execute:
+</div>
+<div class="col-md-6" markdown="1">
 
-```
-$ bundle
-```
+## Features
+{:.mt-0}
 
-Or install it yourself as:
+Despite being a mediocre theme, we've got a features that we're especially proud of and dedicate a lot of our time to making sure they work as expected.
 
-```
-$ gem install jekyll-docs-theme
-```
+### Graceful Degradation
 
-<div class="alert alert-warning" markdown="1">
-**Warning:** Custom [themes are not supported on GitHub Pages](https://pages.github.com/themes/) at the time of writing this, so you may either build your site on another platform or simply fork this repo and build upon it as you would any other theme.
+This theme uses as little JavaScript as possible. All of our anchors and table of contents are generated at build time. Any features that rely on JavaScript have fallbacks for graceful degradation. It's how the web should be nowadays.
+
+### Heavily Customizable
+
+A lot of parts in these theme consist of empty Jekyll includes that are designed to be overridden by website owners. Inject your custom code easily to any part of the website!
+
+### Dark Mode
+
+We all know that dark mode makes you a better human. This theme supports a dark mode based on each user's preference.
+
+</div>
 </div>
 
-# Configuration Options
-
-A sample [`_config.yml`](https://github.com/allejo/jekyll-docs-theme/blob/master/docs/_config.yml) file is available with all of the available fields; documentation and more information for each of those fields is available below.
