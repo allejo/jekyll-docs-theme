@@ -1,24 +1,22 @@
 ---
 ---
 
-@import 'variables';
+@import 'abstracts/variables';
+
+// Base Styles
+@import 'base/base';
+
+// Components
+@import 'components/alert';
+@import 'components/buttons';
+@import 'components/highlight';
+@import 'components/masthead';
+@import 'components/mobile-toc';
+@import 'components/sidebar';
 
 // Utilities
 @import 'utilities/colors';
-
-// Base Styles
-@import 'base';
-
-// Components
-@import 'alert';
-@import 'buttons';
-@import 'highlight';
-@import 'masthead';
-@import 'mobile-toc';
-@import 'sidebar';
-
-// Utilities
-@import 'js';
+@import 'utilities/js';
 
 .site-masthead {
     background: {{ site.ui.header.color1 }};
