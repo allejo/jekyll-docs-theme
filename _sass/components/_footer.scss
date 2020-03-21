@@ -1,0 +1,15 @@
+.site-footer {
+}
+
+.site-footer__links {
+    .list-inline-item {
+        &:not(:last-child)::after {
+            content: '\00b7';
+            padding-left: 0.5rem;
+        }
+    }
+}
+
+.site-footer__summary {
+    font-size: 0.8rem;
+}

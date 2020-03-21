@@ -4,11 +4,12 @@
 @import 'abstracts/variables';
 
 // Base Styles
-@import 'base/base';
+@import 'base/body';
 
 // Components
 @import 'components/alert';
 @import 'components/buttons';
+@import 'components/footer';
 @import 'components/highlight';
 @import 'components/masthead';
 @import 'components/mobile-toc';
@@ -17,6 +18,16 @@
 // Utilities
 @import 'utilities/colors';
 @import 'utilities/js';
+
+//
+// Styles configured via _config.yml
+// ---------------------------------
+
+a {
+    border-bottom: 1px dashed currentColor;
+    color: {{ site.ui.accent }};
+    text-decoration: none;
+}
 
 .site-masthead {
     background: {{ site.ui.header.color1 }};
