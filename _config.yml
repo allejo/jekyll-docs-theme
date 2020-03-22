@@ -34,14 +34,25 @@ links:
       url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
 
 ui:
-  brand: "#a20000"
-  border_color: "#dee2e6"
+  mode: 'auto' # 'auto', 'dark', 'light'
+  brand:
+    dark: "#00ceff"
+    light: "#a20000"
+  border_color:
+    dark: "#5f5f5f"
+    light: "#dee2e6"
   header:
-    color1: "#080331"
-    color2: "#673051"
     trianglify: true
+    dark:
+      color1: "#062a48"
+      color2: "#304e67"
+    light:
+      color1: "#080331"
+      color2: "#673051"
   masthead:
-    color: "#fff"
+    color:
+      dark: "#fff"
+      light: "#fff"
     align:
       homepage: 'center'
       page: 'left'

@@ -11,6 +11,11 @@
     top: 20px;
 
     a {
+        @include themer(color, (
+            'dark': #c7c7c7,
+            'light': #999,
+        ));
+
         border-bottom: 0;
     }
 
@@ -27,27 +32,40 @@
 
         a {
             border-bottom: 0;
-            color: #999;
             display: block;
             font-weight: 500;
             position: relative;
 
             &:focus,
             &:hover {
+                @include themer(color, (
+                    'dark': $site-ui-brand-dark,
+                    'light': $site-ui-brand-light,
+                ));
+
                 background-color: transparent;
-                color: $site-theme-brand;
             }
 
             &.active,
             &.active:focus,
             &.active:hover {
-                color: $site-theme-brand;
+                @include themer(color, (
+                    'dark': $site-ui-brand-dark,
+                    'light': $site-ui-brand-light,
+                ));
+
                 font-weight: 700;
 
                 // In order to prevent being affected by the extra width misaligning
                 // content, we'll do position absolute the border.
                 &::before {
-                    border-left: $sidebar-border-width solid $site-theme-brand;
+                    @include themer(border-left-color, (
+                        'dark': $site-ui-brand-dark,
+                        'light': $site-ui-brand-light,
+                    ));
+
+                    border-left-style: solid;
+                    border-left-width: $sidebar-border-width;
                     content: '';
                     display: block;
                     height: 100%;
