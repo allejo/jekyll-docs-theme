@@ -1,11 +1,11 @@
 a {
     border-bottom: 1px dashed currentColor;
-    color: $site-theme-accent;
+    color: $site-theme-brand;
     text-decoration: none;
 
     &:active,
     &:focus,
     &:hover {
-        color: darken($site-theme-accent, 10%);
+        color: darken($site-theme-brand, 10%);
     }
 }

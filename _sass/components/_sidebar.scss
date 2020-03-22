@@ -35,19 +35,19 @@
             &:focus,
             &:hover {
                 background-color: transparent;
-                color: $sidebar-highlight-color;
+                color: $site-theme-brand;
             }
 
             &.active,
             &.active:focus,
             &.active:hover {
-                color: $sidebar-highlight-color;
+                color: $site-theme-brand;
                 font-weight: 700;
 
                 // In order to prevent being affected by the extra width misaligning
                 // content, we'll do position absolute the border.
                 &::before {
-                    border-left: $sidebar-highlight-width solid $sidebar-highlight-color;
+                    border-left: $sidebar-highlight-width solid $site-theme-brand;
                     content: '';
                     display: block;
                     height: 100%;

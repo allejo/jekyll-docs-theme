@@ -29,7 +29,7 @@ links:
       url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
 
 ui:
-  accent: "#a20000"
+  brand: "#a20000"
   border_color: "#dee2e6"
   header:
     color1: "#080331"
@@ -62,3 +62,6 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+  - jekyll-docs-theme.gemspec
+  - README.md
+  - screenshot.png

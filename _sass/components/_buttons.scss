@@ -1,28 +1,28 @@
 .btn-outline {
     background-color: transparent;
-    border-color: $brand-color;
-    color: $brand-color;
+    border-color: $site-theme-brand;
+    color: $site-theme-brand;
 
     &:hover,
     &:focus,
     &:active {
-        background-color: $brand-color;
-        border-color: $brand-color;
-        color: choose-contrast-color($brand-color);
+        background-color: $site-theme-brand;
+        border-color: $site-theme-brand;
+        color: choose-contrast-color($site-theme-brand);
     }
 }
 
 .btn-outline-inverse {
     background-color: transparent;
     border-color: #cdbfe3;
-    color: choose-contrast-color($brand-color);
+    color: choose-contrast-color($site-theme-brand);
 
     &:hover,
     &:focus,
     &:active {
-        background-color: choose-contrast-color($brand-color);
-        border-color: choose-contrast-color($brand-color);
-        color: $brand-color;
+        background-color: choose-contrast-color($site-theme-brand);
+        border-color: choose-contrast-color($site-theme-brand);
+        color: $site-theme-brand;
         text-shadow: none;
     }
 }
