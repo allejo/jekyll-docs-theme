@@ -1,45 +1,22 @@
 ---
-layout: page
+layout: full
 homepage: true
+description: If mediocrity had a Jekyll theme...
 ---
 
-# Overview
+A Jekyll theme inspired by Bootstrap's official documentation theme from a few years back. This theme started off by stealing all of Bootstrap Docs' CSS and being used in [mistic100's theme](https://github.com/mistic100/jekyll-bootstrap-doc). This theme has since be rewritten from scratch and remains solely inspired by the original design.
 
-> This is a [Jekyll theme](https://github.com/allejo/jekyll-docs-theme) based on [mistic100's modification](https://github.com/mistic100/jekyll-bootstrap-doc) of the official Bootstrap documentation from a few years back.
+This theme is designed for writing documentation websites instead of having large unmaintainable README files or several markdown files inside of a folder in a repository.
 
-Jekyll Docs Theme is provided as a theme for writing documentation for your projects instead of having a single large README file or several markdown files stored in a not so user-friendly manner.
+<div class="row">
+<div class="col-lg-6" markdown="1">
 
-This theme is still in development but is kept fairly stable; just note, there are a lot things yet to come.
+## Installation
+{:.mt-lg-0}
 
-# Installation
+This theme is designed to work both as a Gem or as a remote theme, meaning we officially support GitHub Pages.
 
-## Remote Theme
-
-This theme supports [jekyll-remote-theme](https://github.com/benbalter/jekyll-remote-theme).
-
-1. Add the following to your Gemfile
-
-  ```ruby
-  gem "jekyll-remote-theme"
-  ```
-
-  and run `bundle install` to install the plugin
-
-2. Add the following to your site's `_config.yml` to activate the plugin
-
-  ```yml
-  plugins:
-    - jekyll-remote-theme
-  ```
-  Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
-
-3. Add the following to your site's `_config.yml` to choose your theme
-
-  ```yml
-  remote_theme: allejo/jekyll-docs-theme
-  ```
-
-## Gem Based
+### Gem
 
 Add this line to your Jekyll site's Gemfile:
 
@@ -47,132 +24,34 @@ Add this line to your Jekyll site's Gemfile:
 gem "jekyll-docs-theme"
 ```
 
+### GitHub Pages
+
 And add this line to your Jekyll site's _config.yml:
 
 ```yaml
 theme: jekyll-docs-theme
 ```
 
-And then execute:
+</div>
+<div class="col-lg-6" markdown="1">
 
-```
-$ bundle
-```
+## Features
+{:.mt-lg-0}
 
-Or install it yourself as:
+Despite being a mediocre theme, we've got a features that we're especially proud of and dedicate a lot of our time to making sure they work as expected.
 
-```
-$ gem install jekyll-docs-theme
-```
+### Graceful Degradation
 
-# Configuration Options
+This theme uses as little JavaScript as possible. All of our anchors and table of contents are generated at build time. Any features that rely on JavaScript have fallbacks for graceful degradation. It's how the web should be nowadays.
 
-A sample [`_config.yml`](https://github.com/allejo/jekyll-docs-theme/blob/master/_config.yml) file is available with all of the available fields; documentation and more information for each of those fields is available below.
+### Heavily Customizable
 
-## Project
+A lot of parts in these theme consist of empty Jekyll includes that are designed to be overridden by website owners. Inject your custom code easily to any part of the website!
 
-The project object can be specified with information related to the software this; this information will appear on the homepage's jumbotron area.
+### Dark Mode
 
-```yaml
-project:
-  version: 1.0.0
-  download_url: https://github.com/USER/PROJECT/releases
-```
+We all know that dark mode makes you a better human. This theme supports a dark mode based on each user's preference.
 
-{:.table}
-| field | description |
-| ----- | ----------- |
-| `version` | The current version of the software |
-| `download_url` | The URL to the current download |
+</div>
+</div>
 
-## Licenses
-
-The license object accepts four fields regarding information about the licensing of your software and documentation.
-
-```yaml
-license:
-  software: MIT License
-  software_url: http://opensource.org/licenses/MIT
-
-  docs: CC BY 3.0
-  docs_url: http://creativecommons.org/licenses/by/3.0/
-```
-
-{:.table}
-| field | description |
-| ----- | ----------- |
-| `software` | The license the software is distributed under |
-| `software_url` | A URL to the license text for the license specified in `software` |
-| `docs` | The license this documentation is distributed under |
-| `docs_url` | A URL to the license text for the license specified in `docs` |
-
-## Links
-
-The links object has two subobjects, `header` and `footer`; both of these objects accept an array of elements with a `title` and `url`. The links defined in the `header` object will appear in the navigation of the website and the links in the `footer` will appear at the bottom of the website.
-
-```yaml
-links:
-  header:
-    - title: GitHub
-      url: https://github.com/allejo/jekyll-docs-theme
-  footer:
-    - title: GitHub
-      url: https://github.com/allejo/jekyll-docs-theme
-    - title: Issues
-      url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
-```
-
-{:.table}
-| field | description |
-| ----- | ----------- |
-| `title` | The textual representation of the URL |
-| `url` | The URL of the link |
-
-## UI
-
-The ui object will contain all the settings in regards to the aesthetics of the website
-
-```yaml
-ui:
-  header:
-    color1: "#080331"
-    color2: "#673051"
-    trianglify: true
-```
-
-{:.table}
-| field | description |
-| ----- | ----------- |
-| `color1` & `color2` | The two colors that will create the gradient of the page header |
-| `trianglify` | When set to true, the page header will be a generated triangular pattern |
-
-## Analytics
-
-```yaml
-analytics:
-    google: UA-123456-1
-```
-
-{:.table}
-| field | description |
-| ----- | ----------- |
-| `google` | The unique identifier for Google Analytics; typically looks like `U-123456-1`
-
-## Social
-
-Options for configuring buttons to "like", "tweet" or "star" this site with the respective social media websites.
-
-```yaml
-social:
-  github:
-    user: allejo
-    repo: jekyll-docs-theme
-  twitter:
-    enabled: false
-    via:
-    hash:
-    account:
-  facebook:
-    enabled: false
-    profileUrl:
-```

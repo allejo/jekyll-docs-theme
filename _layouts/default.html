@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        {% include head.html %}
+        {% include head/full.html %}
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target="#page-toc" data-offset="0">
         {% include navigation.html %}
-        {% include jumbotron.html %}
+        {% include masthead.html %}
 
         {{ content }}
 
-        {% include footer.html %}
+        {% include footer/full.html %}
     </body>
 </html>

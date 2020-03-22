@@ -2,50 +2,83 @@
 name: Jekyll Docs Theme
 
 project:
-    version: 0.1.0
-    download_url: https://github.com/allejo/jekyll-docs-theme/releases
+  version: 1.0.0-dev
+  download_url: https://github.com/allejo/jekyll-docs-theme/releases
+  download_text: Download
 
 license:
-    software: MIT License
-    software_url: https://opensource.org/licenses/MIT
+  software: MIT License
+  software_url: https://opensource.org/licenses/MIT
 
-    docs: CC BY 3.0
-    docs_url: https://creativecommons.org/licenses/by/3.0/
+  docs: CC BY 3.0
+  docs_url: https://creativecommons.org/licenses/by/3.0/
 
 links:
-    header:
-      - title: GitHub
-        url: https://github.com/allejo/jekyll-docs-theme
-    footer:
-      - title: GitHub
-        url: https://github.com/allejo/jekyll-docs-theme
-      - title: Issues
-        url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
+  header:
+    - title: GitHub
+      icon: github
+      brand: true
+      url: https://github.com/allejo/jekyll-docs-theme
+  homepage:
+    - title: View on GitHub
+      icon: github
+      brand: true
+      url: https://github.com/allejo/jekyll-docs-theme
+  footer:
+    - title: GitHub
+      icon: github
+      brand: true
+      url: https://github.com/allejo/jekyll-docs-theme
+    - title: Issues
+      icon: bug
+      url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
 
 ui:
-    header:
-        color1: "#080331"
-        color2: "#673051"
-        trianglify: true
+  mode: 'auto' # 'auto', 'dark', 'light'
+  brand:
+    dark: "#00ceff"
+    light: "#a20000"
+  border_color:
+    dark: "#5f5f5f"
+    light: "#dee2e6"
+  header:
+    trianglify: true
+    dark:
+      color1: "#062a48"
+      color2: "#304e67"
+    light:
+      color1: "#080331"
+      color2: "#673051"
+  masthead:
+    color:
+      dark: "#fff"
+      light: "#fff"
+    align:
+      homepage: 'center'
+      page: 'left'
 
 social:
-    github:
-        user: allejo
-        repo: jekyll-docs-theme
-    twitter:
-        enabled: false
-        via:
-        hash:
-        account:
-    facebook:
-        enabled: false
-        profileUrl:
+  github:
+    user: allejo
+    repo: jekyll-docs-theme
+  twitter:
+    enabled: false
+    via:
+    hash:
+    account:
+  facebook:
+    enabled: false
+    profileUrl:
 
 analytics:
-    google: UA-123456-1
+  google: UA-123456-1
 
 # Build settings
 markdown: kramdown
 exclude:
-    - Gemfile
-    - Gemfile.lock
+  - Gemfile
+  - Gemfile.lock
+  - jekyll-docs-theme.gemspec
+  - LICENSE.md
+  - README.md
+  - screenshot.png

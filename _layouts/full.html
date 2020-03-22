@@ -2,8 +2,10 @@
 layout: default
 ---
 
-<div class="container bs-docs-container">
-    <div class="bs-docs-section" role="main">{{ content }}</div>
+<div class="container">
+    <div class="scope-markdown" role="main">
+        {% include anchor_headings.html html=content anchorBody="#" anchorClass="heading-anchor" %}
+    </div>
 
     {% include disqus.html %}
 </div>

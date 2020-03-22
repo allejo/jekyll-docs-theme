@@ -3,18 +3,53 @@ layout: default
 ---
 
 <div class="container">
-    <div class="bs-docs-container row">
-        <div class="col-md-12" role="main">
-            <div class="bs-docs-section">{{ content }}</div>
-        </div>
+    <div class="row">
+        <main class="col-md-9">
+            <section class="mobile-toc border mb-3 p-3 d-md-none">
+                <div class="d-flex align-items-center">
+                    <h2 class="mb-0">Table of Contents</h2>
 
-        <div class="col-md-3 bs-docs-sidebar hidden-print" role="complementary">
-            <ul class="nav bs-docs-sidenav"></ul>
+                    <button
+                        class="js-only ml-2 toggle-toc"
+                        aria-controls="mobileTOC"
+                        aria-label="Toggle table of contents"
+                        aria-expanded="true"
+                    >
+                        <span aria-hidden="true" data-role="toggle">Hide</span>
+                    </button>
+                </div>
 
-            <a class="back-to-top" href="#top"> <i class="glyphicon glyphicon-chevron-up"></i>
-                Back to top
-            </a>
-        </div>
+                {% include toc.html
+                     html=content
+                     class="js-toc.mb-0.mt-2"
+                     id="mobileTOC"
+                     h_max=3
+                %}
+            </section>
+
+            <section class="scope-markdown">
+                {% include anchor_headings.html
+                     html=content
+                     anchorBody="#"
+                     anchorClass="heading-anchor"
+                %}
+            </section>
+        </main>
+
+        <aside class="col-md-3 d-none d-md-block hidden-print">
+            <nav id="page-toc" class="page-sidebar">
+                {% include toc.html
+                     html=content
+                     class="list-unstyled.pl-0"
+                     anchor_class="nav-link.px-3.py-1"
+                     h_max=3
+                %}
+
+                <a class="px-3 text-muted" href="#top">
+                    <small>Back to top</small>
+                </a>
+            </nav>
+        </aside>
     </div>
 
     {% include disqus.html %}
