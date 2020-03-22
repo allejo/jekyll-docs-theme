@@ -26,6 +26,14 @@
     }
 }
 
+.site-footer__link {
+    border-bottom: 0;
+
+    span {
+        border-bottom: 1px dashed currentColor;
+    }
+}
+
 .site-footer__summary {
     font-size: 0.8rem;
 }

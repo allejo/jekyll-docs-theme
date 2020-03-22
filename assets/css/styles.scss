@@ -5,8 +5,9 @@ $site-theme-brand: {{ site.ui.brand }};
 $site-theme-border-color: {{ site.ui.border_color }};
 $site-theme-color1: {{ site.ui.header.color1 }};
 $site-theme-color2: {{ site.ui.header.color2 }};
+$site-theme-masthead-color: {{ site.ui.masthead.color | default: '#fff' }};
 
-$sidebar-highlight-width: 2px !default;
+$sidebar-border-width: 2px !default;
 
 // Base Styles
 @import 'base/anchor';
@@ -15,7 +16,6 @@ $sidebar-highlight-width: 2px !default;
 
 // Components
 @import 'components/alert';
-@import 'components/buttons';
 @import 'components/footer';
 @import 'components/header';
 @import 'components/highlight';

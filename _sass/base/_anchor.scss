@@ -7,5 +7,6 @@ a {
     &:focus,
     &:hover {
         color: darken($site-theme-brand, 10%);
+        text-decoration: none;
     }
 }

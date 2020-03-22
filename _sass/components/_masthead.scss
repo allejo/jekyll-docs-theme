@@ -16,16 +16,16 @@
 }
 
 .site-masthead__button {
-    border: 1px solid #fff;
+    border: 1px solid $site-theme-masthead-color;
     border-radius: 5px;
     color: #fff;
     display: inline-block;
     font-size: 1.25rem;
-    padding: 0.75rem 2rem;
     margin-right: 1rem;
+    padding: 0.75rem 2rem;
 
     &:hover {
-        background-color: #fff;
+        background-color: $site-theme-masthead-color;
         color: $site-theme-brand;
         text-decoration: none;
     }

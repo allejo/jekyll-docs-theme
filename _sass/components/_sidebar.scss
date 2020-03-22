@@ -47,7 +47,7 @@
                 // In order to prevent being affected by the extra width misaligning
                 // content, we'll do position absolute the border.
                 &::before {
-                    border-left: $sidebar-highlight-width solid $site-theme-brand;
+                    border-left: $sidebar-border-width solid $site-theme-brand;
                     content: '';
                     display: block;
                     height: 100%;
