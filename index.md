@@ -9,10 +9,10 @@ A Jekyll theme inspired by Bootstrap's official documentation theme from a few y
 This theme is designed for writing documentation websites instead of having large unmaintainable README files or several markdown files inside of a folder in a repository.
 
 <div class="row">
-<div class="col-md-6" markdown="1">
+<div class="col-lg-6" markdown="1">
 
 ## Installation
-{:.mt-0}
+{:.mt-lg-0}
 
 This theme is designed to work both as a Gem or as a remote theme, meaning we officially support GitHub Pages.
 
@@ -33,10 +33,10 @@ theme: jekyll-docs-theme
 ```
 
 </div>
-<div class="col-md-6" markdown="1">
+<div class="col-lg-6" markdown="1">
 
 ## Features
-{:.mt-0}
+{:.mt-lg-0}
 
 Despite being a mediocre theme, we've got a features that we're especially proud of and dedicate a lot of our time to making sure they work as expected.
 
