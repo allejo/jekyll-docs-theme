@@ -16,6 +16,8 @@ license:
 links:
   header:
     - title: GitHub
+      icon: github
+      brand: true
       url: https://github.com/allejo/jekyll-docs-theme
   homepage:
     - title: View on GitHub
@@ -24,8 +26,11 @@ links:
       url: https://github.com/allejo/jekyll-docs-theme
   footer:
     - title: GitHub
+      icon: github
+      brand: true
       url: https://github.com/allejo/jekyll-docs-theme
     - title: Issues
+      icon: bug
       url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
 
 ui:

@@ -81,7 +81,16 @@
                     <ul class="site-footer__links text-left list-inline mb-0">
                         {% for link in site.links.footer %}
                             <li class="list-inline-item">
-                                <a href="{{ link.url }}">{{ link.title }}</a>
+                                <a
+                                    href="{{ link.url }}"
+                                    class="site-footer__link"
+                                >
+                                    {% include fa-icon.html
+                                         icon=link.icon
+                                         brand=link.brand
+                                    %}
+                                    <span>{{ link.title }}</span>
+                                </a>
                             </li>
                         {% endfor %}
                     </ul>

@@ -39,6 +39,7 @@
                             class="nav-link"
                             href="{{ p.url }}"
                         >
+                            {% include fa-icon.html icon=p.icon brand=p.brand %}
                             {{ p.title }}
                         </a>
                     </li>

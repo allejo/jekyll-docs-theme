@@ -2,19 +2,10 @@
     href="{{ include.url }}"
     class="site-masthead__button"
 >
-    {% if include.icon %}
-        {% capture fa_prefix -%}
-            {%- if include.brand -%}
-                fab
-            {%- else -%}
-                fas
-            {%- endif -%}
-        {%- endcapture %}
-        <i
-            class="{{ fa_prefix }} fa-{{ include.icon }} fa-fw mr-1"
-            aria-hidden="true"
-        ></i>
-    {% endif %}
-
+    {% include fa-icon.html
+         icon=include.icon
+         brand=include.brand
+         class="mr-1"
+    %}
     {{ include.title }}
 </a>
