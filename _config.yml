@@ -79,5 +79,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - jekyll-docs-theme.gemspec
+  - LICENSE.md
   - README.md
   - screenshot.png
