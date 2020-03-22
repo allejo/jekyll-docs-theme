@@ -1,29 +1,13 @@
-<div class="site-masthead text-center py-5 mb-5">
+{% capture alignment_class -%}
+    {%- if page.homepage -%}
+        text-{{ site.ui.masthead.align.homepage | default: 'center' }}
+    {%- else -%}
+        text-{{ site.ui.masthead.align.page | default: 'left' }}
+    {%- endif -%}
+{%- endcapture %}
+<div class="site-masthead mb-5 py-5 {{ alignment_class }}">
     <div class="container">
-        <h1>{{ page.title | default: site.name }}</h1>
-
-        {% if page.description %}
-            <p class="site-masthead__description mb-0">
-                {{ page.description }}
-            </p>
-        {% endif %}
-
-        {% if page.homepage %}
-            {% if site.project.download_url %}
-                <p class="site-masthead__download-btn mt-4 mb-0">
-                    <a href="{{ site.project.download_url }}"
-                       class="btn btn-outline-inverse btn-lg"
-                    >
-                        {{ site.project.download_text | default: 'Download' }}
-                    </a>
-                </p>
-            {% endif %}
-
-            {% if site.project.version %}
-                <p class="site-masthead__version mt-1 mb-0">
-                    <small>Currently v{{ site.project.version }}</small>
-                </p>
-            {% endif %}
-        {% endif %}
+        {% include masthead/title.html %}
+        {% include masthead/buttons.html %}
     </div>
 </div>

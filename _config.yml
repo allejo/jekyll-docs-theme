@@ -17,6 +17,11 @@ links:
   header:
     - title: GitHub
       url: https://github.com/allejo/jekyll-docs-theme
+  homepage:
+    - title: View on GitHub
+      icon: github
+      brand: true
+      url: https://github.com/allejo/jekyll-docs-theme
   footer:
     - title: GitHub
       url: https://github.com/allejo/jekyll-docs-theme
@@ -30,6 +35,11 @@ ui:
     color1: "#080331"
     color2: "#673051"
     trianglify: true
+  masthead:
+    color: "#fff"
+    align:
+      homepage: 'center'
+      page: 'left'
 
 social:
   github:

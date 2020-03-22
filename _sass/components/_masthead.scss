@@ -14,3 +14,27 @@
         width: 30%;
     }
 }
+
+.site-masthead__button {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+    margin-right: 1rem;
+
+    &:hover {
+        background-color: #fff;
+        color: $site-theme-brand;
+        text-decoration: none;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.site-masthead__version {
+    font-size: 0.8rem;
+}
