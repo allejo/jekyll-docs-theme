@@ -24,12 +24,18 @@ Add this line to your Jekyll site's Gemfile:
 gem "jekyll-docs-theme"
 ```
 
-### GitHub Pages
-
-And add this line to your Jekyll site's _config.yml:
+And then enable and use the theme in your Jekyll site via its `_config.yml`.
 
 ```yaml
 theme: jekyll-docs-theme
+```
+
+### GitHub Pages
+
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+remote_theme: allejo/jekyll-docs-theme
 ```
 
 </div>
