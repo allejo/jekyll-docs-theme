@@ -1,6 +1,5 @@
 $(function(){
     $('html').toggleClass('no-js js');
-    $('.bs-docs-sidenav').Stickyfill();
 
     // Update sidebar highlighting based on Scrollspy
     $(window).on('activate.bs.scrollspy', function () {
