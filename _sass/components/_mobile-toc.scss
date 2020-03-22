@@ -9,9 +9,13 @@
     }
 
     .toggle-toc {
+        @include themer(color, (
+            'dark': $site-ui-brand-dark,
+            'light': $site-ui-brand-light,
+        ));
+
         background-color: transparent;
         border: none;
-        color: #007bff;
         cursor: pointer;
         padding: 0;
 

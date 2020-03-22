@@ -13,11 +13,10 @@ $(function() {
     // Toggleable mobile table of contents button
     $('.toggle-toc').on('click', function () {
         const $this = $(this);
+        const $toc = $("#mobileTOC");
 
-        $this
-            .parents('.mobile-toc')
-            .find('.js-toc')
-            .toggle();
+        $toc.toggle();
+        $this.attr('aria-expanded', $toc.is(':visible'));
 
         const $btn = $this.find('[data-role="toggle"]');
 
