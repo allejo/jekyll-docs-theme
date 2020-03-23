@@ -4,7 +4,7 @@ layout: default
 
 <div class="container">
     <div class="row">
-        <main class="col-md-9">
+        <main class="col-md-9 layout-page__main">
             <section class="mobile-toc border mb-3 p-3 d-md-none">
                 <div class="d-flex align-items-center">
                     <h2 class="mb-0">Table of Contents</h2>
@@ -36,7 +36,7 @@ layout: default
             </section>
         </main>
 
-        <aside class="col-md-3 d-none d-md-block hidden-print">
+        <aside class="col-md-3 layout-page__sidebar d-none d-md-block hidden-print">
             <nav id="page-toc" class="page-sidebar">
                 {% include toc.html
                      html=content
