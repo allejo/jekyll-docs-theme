@@ -10,7 +10,7 @@ This theme is designed for writing documentation websites instead of having larg
 
 ![Theme Screenshot](./screenshot.png)
 
-**DarkMode**
+**Dark Mode**
 
 ![Theme Screenshot](./screenshot-dark.png)
 
