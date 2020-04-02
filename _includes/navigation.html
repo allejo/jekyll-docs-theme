@@ -18,9 +18,21 @@
 
         <nav class="navbar-collapse collapse" role="navigation" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                {% assign sorted_pages = site.pages | sort: "name" %}
+                {% assign sorted_pages = site.pages | sort: "title" %}
                 {% for p in sorted_pages %}
-                    {% if p.isHome != true and p.hide != true and p.title %}
+                    {% assign is_homepage = false %}
+                    {% if p.homepage == true or p.isHome == true %}
+                        {% assign is_homepage = true %}
+                    {% endif %}
+
+                    {% assign show_in_menu = true %}
+                    {% if p.show_in_menu != nil and p.show_in_menu == false %}
+                        {% assign show_in_menu = false %}
+                    {% elsif p.hide != nil and p.hide == true %}
+                        {% assign show_in_menu = false %}
+                    {% endif %}
+
+                    {% if is_homepage != true and show_in_menu == true and p.title %}
                         <li class="nav-item {% if page.title == p.title %}active{% endif %}">
                             <a
                                 class="nav-link"
