@@ -5,7 +5,11 @@ layout: default
 <div class="container">
     <main class="layout-full__main scope-markdown">
         {% unless page.disable_anchors %}
-            {% include anchor_headings.html html=content anchorBody="#" anchorClass="heading-anchor" %}
+            {% include jekyll-docs-theme/vendor/anchor_headings.html
+                 html=content
+                 anchorBody="#"
+                 anchorClass="heading-anchor"
+            %}
         {% else %}
             {{ content }}
         {% endunless %}
