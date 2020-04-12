@@ -3,14 +3,14 @@
 
 {% capture class -%}
     {{- include.class -}}
-    {%- if fm_class -%}
+    {%- if fm_class != "" -%}
         .{{- fm_class -}}
     {%- endif -%}
 {%- endcapture %}
 
 {% capture anchor_class %}
     {{- include.anchor_class -}}
-    {%- if fm_anchor_class -%}
+    {%- if fm_anchor_class != "" -%}
         .{{- fm_anchor_class -}}
     {%- endif -%}
 {% endcapture %}
