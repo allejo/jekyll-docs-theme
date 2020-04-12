@@ -3,7 +3,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-docs-theme"
-  spec.version       = "1.0.0-beta.2"
+  spec.version       = "1.0.0-beta.3"
   spec.authors       = ["Vladimir 'allejo' Jimenez"]
   spec.email         = ["me@allejo.io"]
 
