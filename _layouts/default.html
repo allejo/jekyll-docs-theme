@@ -4,7 +4,13 @@
         {% include head/full.html %}
     </head>
 
-    <body class="layout-{{ page.layout }}" data-spy="scroll" data-target="#page-toc" data-offset="0">
+    {% assign scrollSpyOffset = page.scrollSpyOffset | default: layout.scrollSpyOffset | default: 0 %}
+    <body
+        class="layout-{{ page.layout }}"
+        data-spy="scroll"
+        data-target="#page-toc"
+        data-offset="{{ scrollSpyOffset }}"
+    >
         {% include navigation.html %}
         {% include masthead.html %}
 
