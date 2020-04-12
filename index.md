@@ -36,7 +36,7 @@ theme: jekyll-docs-theme
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-remote_theme: allejo/jekyll-docs-theme
+remote_theme: allejo/jekyll-docs-theme@v{{ site.project.version }}
 ```
 
 </div>
