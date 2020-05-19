@@ -7,6 +7,10 @@ description: If mediocrity had a Jekyll theme...
 
 A Jekyll theme inspired by Bootstrap's official documentation theme from a few years back. This theme started off by stealing all of Bootstrap Docs' CSS and being used in [mistic100's theme](https://github.com/mistic100/jekyll-bootstrap-doc). This theme has since be rewritten from scratch and remains solely inspired by the original design.
 
+> I've never seen a more mediocre theme it actually hurts my insides.
+>
+> ~ _Anonymous_, 2020
+
 This theme is designed for writing documentation websites instead of having large unmaintainable README files or several markdown files inside of a folder in a repository.
 
 <div class="row">
