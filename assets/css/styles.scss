@@ -26,6 +26,7 @@ $site-ui-masthead-color-light: {{ site.ui.masthead.color.light | default: '#fff'
 @import 'base/anchor';
 @import 'base/body';
 @import 'base/blockquote';
+@import 'base/horizontal-rule';
 @import 'base/scope-markdown';
 
 // Components

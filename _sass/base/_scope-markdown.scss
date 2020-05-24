@@ -51,13 +51,27 @@
         padding-bottom: 0.5rem;
     }
 
-    h3 {
+    h3, h4, h5, h6 {
         font-size: 1.5rem;
+        font-weight: bold;
         margin-bottom: 0.75rem;
         margin-top: 1.75rem;
     }
 
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1.15rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
     img {
+        display: block;
         max-width: 100%;
     }
 
