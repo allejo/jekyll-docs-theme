@@ -13,6 +13,9 @@ license:
   docs: CC BY 3.0
   docs_url: https://creativecommons.org/licenses/by/3.0/
 
+search:
+  enabled: true
+
 links:
   header:
     - title: GitHub

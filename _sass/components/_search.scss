@@ -1,0 +1,32 @@
+.site-search {
+    label {
+        cursor: pointer;
+    }
+
+    input[type="text"] {
+        appearance: none;
+        background-color: transparent;
+        border: 0;
+        color: currentColor;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        transition: margin 0.5s, width 0.5s;
+        width: 0;
+    }
+
+    &:focus-within {
+        input[type="text"] {
+            @include themer(border-bottom-color, (
+                'dark': $site-ui-brand-dark,
+                'light': $site-ui-brand-light,
+            ));
+
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            margin-left: 0.5rem;
+            padding: 0 0.25rem;
+            width: 200px;
+        }
+    }
+}
