@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Front Matter
-description: ~
+title: Fronttt Matter
+description: Front matter description 
 ---
 
 This theme introduces special [front matter](https://jekyllrb.com/docs/front-matter/) options available in all pages to configure the behavior of said page.
