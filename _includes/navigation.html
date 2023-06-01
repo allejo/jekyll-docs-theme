@@ -44,15 +44,9 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <div class="site-search ml-auto">
+            <div class="ml-auto">
                 {% if site.search.enabled == true %}
-                    <form class="form-inline" action="/search" method="get">
-                        <label for="search-field">
-                            {% include fa-icon.html icon="search" %}
-                            <span class="sr-only">Search Website</span>
-                        </label>
-                        <input type="text" id="search-field" placeholder="Search" />
-                    </form>
+                    {% include search.html %}
                 {% endif %}
             </div>
             <ul class="navbar-nav">

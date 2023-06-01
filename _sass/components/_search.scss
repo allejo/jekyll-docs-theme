@@ -1,4 +1,6 @@
 .site-search {
+    position: relative;
+
     label {
         cursor: pointer;
     }
@@ -28,5 +30,25 @@
             padding: 0 0.25rem;
             width: 200px;
         }
+    }
+}
+
+.search-results {
+    @include themer(background-color, (
+        'dark': $background-color-dark,
+        'light': $background-color-light,
+    ));
+
+    left: 0;
+    list-style: none;
+    margin: 0;
+    max-width: 400px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+
+    .search-result {
+        padding: 1em;
     }
 }

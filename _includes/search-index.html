@@ -1,0 +1,11 @@
+{% assign count = 0 %}
+
+{% for page in site.pages %}
+    {
+        id: {{ count }},
+        title: "{{ page.title }}",
+        content: "{{ page.content | strip_html | strip_newlines | escape }}",
+        permalink: "{{ page.url | relative_url }}",
+    },
+    {% assign count = count | plus: 1 %}
+{% endfor %}

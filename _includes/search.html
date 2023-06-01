@@ -1,0 +1,88 @@
+<script src="{{ '/assets/js/search-index.js' | relative_url }}"></script>
+<script src="https://unpkg.com/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
+<script type="module">
+    import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus@3.2.1/dist/stimulus.js";
+
+    window.Stimulus = Application.start();
+
+    Stimulus.register('search', class extends Controller {
+        static targets = ['form', 'input', 'results'];
+
+        connect() {
+            this.element.addEventListener('focusout', this.onFocusLost);
+            this.formTarget.addEventListener('submit', this.onFormSubmit);
+            this.inputTarget.addEventListener('keyup', this.onSearchFilter);
+
+            this.searchIndex = new FlexSearch.Document({
+                document: {
+                    id: 'id',
+                    index: [
+                        'title',
+                        'content'
+                    ]
+                }
+            });
+            SearchIndex.forEach(document => {
+                this.searchIndex.add(document.id, document);
+            });
+        }
+
+        disconnect() {
+            this.element.removeEventListener('focusout', this.onFocusLost);
+            this.formTarget.removeEventListener('submit', this.onFormSubmit);
+            this.inputTarget.removeEventListener('keyup', this.onSearchFilter);
+        }
+
+        onFormSubmit = (event) => event.preventDefault();
+
+        onSearchFilter = (event) => {
+            const query = event.target.value;
+            const searchResults = this.searchIndex.search(query, 10);
+
+            let output = '';
+            searchResults.forEach(searchResult => {
+                const contentItems = searchResult.result.map(id => SearchIndex[id]);
+
+                contentItems.forEach(contentItem => {
+                    output += `
+                        <li class="search-result">
+                            <a href="${contentItem.permalink}">
+                                <p><strong>${contentItem.title}</strong></p>
+                                <p>${contentItem.content}</p>
+                            </a>
+                        </li>
+                    `;
+                });
+            });
+
+            this.resultsTarget.innerHTML = output;
+
+            console.log('search query', query, "--", searchResults);
+        }
+
+        onFocusLost = (focusEvent) => {
+            if (focusEvent.currentTarget.contains(focusEvent.relatedTarget)) {
+                return;
+            }
+
+            this.resultsTarget.innerHTML = '';
+        };
+    });
+</script>
+
+<div class="site-search" data-controller="search">
+    <form class="form-inline" data-search-target="form">
+        <label for="search-field">
+            {% include fa-icon.html icon="search" %}
+            <span class="sr-only">Search Website</span>
+        </label>
+
+        <input
+            type="text"
+            id="search-field"
+            placeholder="Search"
+            data-search-target="input"
+        />
+    </form>
+    <ul class="search-results" data-search-target="results"></ul>
+</div>
