@@ -45,10 +45,10 @@
 
                 contentItems.forEach(contentItem => {
                     output += `
-                        <li class="search-result">
-                            <a href="${contentItem.permalink}">
-                                <p><strong>${contentItem.title}</strong></p>
-                                <p>${contentItem.content}</p>
+                        <li class="search-result-container">
+                            <a class="search-result" href="${contentItem.permalink}">
+                                <p class="search-result-title"><strong>${contentItem.title}</strong></p>
+                                <p class="search-result-summary">${contentItem.summary}</p>
                             </a>
                         </li>
                     `;

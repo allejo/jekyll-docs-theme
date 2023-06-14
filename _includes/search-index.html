@@ -5,6 +5,7 @@
         id: {{ count }},
         title: "{{ page.title }}",
         content: "{{ page.content | strip_html | strip_newlines | escape }}",
+        summary: "{{ page.content | strip_html | strip_newlines | truncatewords: 20 }}",
         permalink: "{{ page.url | relative_url }}",
     },
     {% assign count = count | plus: 1 %}
