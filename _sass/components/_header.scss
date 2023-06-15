@@ -8,11 +8,7 @@
     }
 
     .icon-bar {
-        @include themer(background, (
-            'dark': $site-ui-brand-dark,
-            'light': $site-ui-brand-light,
-        ));
-
+        background-color: var(--jekyll-brand-color);
         border-radius: 1px;
         display: block;
         height: 2px;

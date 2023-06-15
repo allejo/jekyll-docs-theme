@@ -1,20 +1,12 @@
 a {
-    @include themer(color, (
-        'dark': $site-ui-brand-dark,
-        'light': $site-ui-brand-light,
-    ));
-
     border-bottom: 1px dashed currentColor;
+    color: var(--jekyll-brand-color);
     text-decoration: none;
 
     &:active,
     &:focus,
     &:hover {
-        @include themer(color, (
-            'dark': darken($site-ui-brand-dark, 10%),
-            'light': darken($site-ui-brand-light, 10%),
-        ));
-
+        color: calc(var(--jekyll-brand-color) * 0.1);
         text-decoration: none;
     }
 }

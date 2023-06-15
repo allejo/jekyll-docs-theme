@@ -9,13 +9,9 @@
     }
 
     .toggle-toc {
-        @include themer(color, (
-            'dark': $site-ui-brand-dark,
-            'light': $site-ui-brand-light,
-        ));
-
         background-color: transparent;
         border: none;
+        color: var(--jekyll-brand-color);
         cursor: pointer;
         padding: 0;
 

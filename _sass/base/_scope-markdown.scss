@@ -1,9 +1,6 @@
 .scope-markdown {
     code {
-        @include themer(color, (
-            'dark': #ffa6a6,
-            'light': #e83e8c,
-        ));
+        color: var(--jekyll-code-color);
     }
 
     h1, h2, h3,
@@ -22,11 +19,7 @@
                 &:active,
                 &:focus,
                 &:hover {
-                    @include themer(color, (
-                        'dark': $site-ui-brand-dark,
-                        'light': $site-ui-brand-light,
-                    ));
-
+                    color: var(--jekyll-brand-color);
                     text-decoration: underline;
                 }
             }
@@ -38,11 +31,7 @@
     }
 
     h2 {
-        @include themer(border-bottom-color, (
-            'dark': $site-ui-border-color-dark,
-            'light': $site-ui-border-color-light,
-        ));
-
+        border-bottom-color: var(--jekyll-border-color);
         border-bottom-style: solid;
         border-bottom-width: 1px;
         font-size: 2rem;
@@ -80,11 +69,7 @@
 
         thead,
         tr {
-            @include themer(border-bottom-color, (
-                'dark': $site-ui-border-color-dark,
-                'light': $site-ui-border-color-light,
-            ));
-
+            border-bottom-color: var(--jekyll-border-color);
             border-bottom-style: solid;
         }
 

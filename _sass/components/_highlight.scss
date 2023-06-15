@@ -15,15 +15,8 @@
 }
 
 .highlight {
-    @include themer(background-color, (
-        'dark': #3f3f3f,
-        'light': #f7f7f9,
-    ));
-    @include themer(border-color, (
-        'dark': #222222,
-        'light': #e1e1e8,
-    ));
-
+    background-color: var(--jekyll-highlight-background-color);
+    border-color: var(--jekyll-border-color);
     border-style: solid;
     border-width: 1px;
     border-radius: 4px;
@@ -40,11 +33,7 @@
 }
 
 .highlight pre code {
-    @include themer(color, (
-        'dark': #fdce93,
-        'light': #333,
-    ));
-
+    color: var(--jekyll-codeblock-font-color);
     font-size: inherit;
     white-space: pre;
 }

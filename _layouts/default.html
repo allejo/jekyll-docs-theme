@@ -4,9 +4,10 @@
         {% include head/full.html %}
     </head>
 
+    {% include internal/variables.html %}
     {% assign scrollSpyOffset = page.scrollSpyOffset | default: layout.scrollSpyOffset | default: 0 %}
     <body
-        class="layout-{{ page.layout }}"
+        class="layout-{{ page.layout }} theme-{{ site_ui_mode }}"
         data-spy="scroll"
         data-target="#page-toc"
         data-offset="{{ scrollSpyOffset }}"

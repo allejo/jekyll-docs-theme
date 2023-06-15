@@ -13,12 +13,8 @@
     top: 20px;
 
     a {
-        @include themer(color, (
-            'dark': #c7c7c7,
-            'light': #999,
-        ));
-
         border-bottom: 0;
+        color: var(--jekyll-sidebar-font-color);
     }
 
     ul {
@@ -40,34 +36,22 @@
 
             &:focus,
             &:hover {
-                @include themer(color, (
-                    'dark': $site-ui-brand-dark,
-                    'light': $site-ui-brand-light,
-                ));
-
                 background-color: transparent;
+                color: var(--jekyll-brand-color);
             }
 
             &.active,
             &.active:focus,
             &.active:hover {
-                @include themer(color, (
-                    'dark': $site-ui-brand-dark,
-                    'light': $site-ui-brand-light,
-                ));
-
+                color: var(--jekyll-brand-color);
                 font-weight: 700;
 
                 // In order to prevent being affected by the extra width misaligning
                 // content, we'll do position absolute the border.
                 &::before {
-                    @include themer(border-left-color, (
-                        'dark': $site-ui-brand-dark,
-                        'light': $site-ui-brand-light,
-                    ));
-
+                    border-left-color: var(--jekyll-brand-color);
                     border-left-style: solid;
-                    border-left-width: $sidebar-border-width;
+                    border-left-width: var(--jekyll-border-width);
                     content: '';
                     display: block;
                     height: 100%;

@@ -1,16 +1,8 @@
 blockquote {
-    @include themer(border-bottom-color, (
-        'dark': $site-ui-border-color-dark,
-        'light': $site-ui-border-color-light,
-    ));
-
-    @include themer(color, (
-        'dark': rgba($color-dark, 60%),
-        'light': rgba($color-light, 60%),
-    ));
-
+    border-bottom-color: var(--jekyll-border-color);
     border-left-style: solid;
     border-left-width: 4px;
+    color: var(--jekyll-font-color);
     padding: 0.5rem 1.25rem;
 
     *:last-child {
