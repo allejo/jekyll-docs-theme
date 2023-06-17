@@ -1,0 +1,46 @@
+{%- capture yamlWorkspace %}
+    {% capture newline %}
+    {% endcapture %}
+    {% assign newline = newline | replace: " ", "" %}
+    {% assign indentChars = "  " %}
+
+    {% assign key = include.key %}
+    {% assign value = include.value %}
+    {% assign indentCount = include.indentCount | default: 0 %}
+    {% assign indent = "" %}
+
+    {% if key %}
+        {% capture output %}{{ key }}:{{ newline }}{% endcapture %}
+    {% else %}
+        {% assign output = "" %}
+    {% endif %}
+
+    <!--
+    The `value` object should be a hash map. Looping through a hashmap in Liquid
+    allows you to access the key at index 0 and the value at index 1.
+    -->
+    {% for entry in value %}
+        {% for i in (1..indentCount) %}
+            {% capture indent %}{{ indent }}{{ indentChars }}{% endcapture %}
+        {% endfor %}
+
+        {% assign yamlKey = entry[0] %}
+        {% assign yamlValue = entry[1] %}
+        {% capture dataType %}{% include jekyll-docs-theme/vendor/data_type.html value=yamlValue %}{% endcapture %}
+
+        {% case dataType %}
+            {% when "string" %}
+                {% capture output %}{{ output }}{{ indent }}{{ yamlKey }}: "{{ yamlValue }}"{{ newline }}{% endcapture %}
+
+            {% when "boolean", "number" %}
+                {% capture output %}{{ output }}{{ indent }}{{ yamlKey }}: {{ yamlValue }}{{ newline }}{% endcapture %}
+
+            {% when "object" %}
+                {% assign newIndentCount = indentCount | plus: 1 %}
+                {% capture output %}{{ output }}{{ indent }}{{ yamlKey }}:{{ newline }}{% include jekyll-docs-theme/vendor/yamlify.html value=yamlValue indentCount=newIndentCount %}{% endcapture %}
+        {% endcase %}
+
+        {% assign indentCount = include.indentCount %}
+        {% assign indent = "" %}
+    {% endfor %}
+{% endcapture -%}{{- output -}}

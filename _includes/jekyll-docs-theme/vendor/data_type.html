@@ -1,0 +1,20 @@
+{%- capture dataTypeWorkspace %}
+    {% assign result = "" %}
+
+    {% assign value = include.value %}
+    {% assign firstCharJson = value | jsonify | slice: 0 %}
+
+    {% if value == nil or firstCharJson == "null" %}
+        {% assign result = "null" %}
+    {% elsif firstCharJson == '"' %}
+        {% assign result = "string" %}
+    {% elsif firstCharJson == '[' %}
+        {% assign result = "array" %}
+    {% elsif firstCharJson == '{' %}
+        {% assign result = "object" %}
+    {% elsif firstCharJson == 't' or firstCharJson == 'f' %}
+        {% assign result = "boolean" %}
+    {% else %}
+        {% assign result = "number" %}
+    {% endif %}
+{% endcapture -%}{{- result -}}
