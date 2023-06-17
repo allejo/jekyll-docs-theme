@@ -4,7 +4,7 @@
 @import 'abstracts/highlight-dark';
 @import 'abstracts/highlight-light';
 
-{% include internal/variables.html %}
+{% include jekyll-docs-theme/variables.html %}
 
 $site-ui-mode: {{ site_ui_mode }};
 

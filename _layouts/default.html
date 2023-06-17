@@ -4,7 +4,7 @@
         {% include head/full.html %}
     </head>
 
-    {% include internal/variables.html %}
+    {% include jekyll-docs-theme/variables.html %}
     {% assign scrollSpyOffset = page.scrollSpyOffset | default: layout.scrollSpyOffset | default: 0 %}
     <body
         class="layout-{{ page.layout }} theme-{{ site_ui_mode }}"
