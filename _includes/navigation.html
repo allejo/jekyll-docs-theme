@@ -44,7 +44,12 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <div class="ml-auto">
+                {% if site.search.enabled == true %}
+                    {% include search.html %}
+                {% endif %}
+            </div>
+            <ul class="navbar-nav">
                 {% for p in site.links.header %}
                     <li class="nav-item {% if page.title == p.title %}active{% endif %}">
                         <a

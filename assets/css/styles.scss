@@ -36,6 +36,7 @@ $site-ui-masthead-color-light: {{ site.ui.masthead.color.light | default: '#fff'
 @import 'components/highlight';
 @import 'components/masthead';
 @import 'components/mobile-toc';
+@import 'components/search';
 @import 'components/sidebar';
 
 // Utilities
