@@ -1,6 +1,9 @@
 ---
 ---
 
+@use 'sass:color';
+@use 'sass:list';
+
 @import 'abstracts/highlight-dark';
 @import 'abstracts/highlight-light';
 
@@ -22,16 +25,25 @@ $colorVariables: (
     sidebar-font-color,
 );
 
-@mixin split-rgb-to-css-variables($variable-name, $color) {
-    --jekyll-#{$variable-name}-r: #{red($color)};
-    --jekyll-#{$variable-name}-g: #{green($color)};
-    --jekyll-#{$variable-name}-b: #{blue($color)};
+@function css-change-lightness($color, $amount) {
+    @return oklch(
+        from $color
+        clamp(0, calc(l + $amount), 1)
+        clamp(0, c, 0.4)
+        h
+        / alpha
+    );
 }
 
-
 @mixin build-theme-colors($colors) {
-    @for $i from 1 through length($colorVariables) {
-        @include split-rgb-to-css-variables(nth($colorVariables, $i), nth($colors, $i));
+    @for $i from 1 through list.length($colorVariables) {
+        $color: list.nth($colors, $i);
+
+        --jekyll-#{list.nth($colorVariables, $i)}-raw: #{(
+            color.channel($color, "red", $space: rgb)
+            color.channel($color, "blue", $space: rgb)
+            color.channel($color, "green", $space: rgb)
+        )};
     }
 }
 
@@ -81,11 +93,7 @@ body.theme-auto {
 body {
     @extend body, .theme-auto;
     @each $variable in $colorVariables {
-        --jekyll-#{$variable}: rgb(
-            var(--jekyll-#{$variable}-r),
-            var(--jekyll-#{$variable}-g),
-            var(--jekyll-#{$variable}-b)
-        );
+        --jekyll-#{$variable}: rgb(var(--jekyll-#{$variable}-raw));
     }
 }
 

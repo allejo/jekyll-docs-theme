@@ -6,7 +6,7 @@ a {
     &:active,
     &:focus,
     &:hover {
-        color: calc(var(--jekyll-brand-color) * 0.1);
+        color: #{css-change-lightness(var(--jekyll-brand-color), -0.3)};
         text-decoration: none;
     }
 }
