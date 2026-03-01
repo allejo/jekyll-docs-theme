@@ -1,0 +1,8 @@
+{% assign include_src = "jekyll-docs-theme/vendor/yamlify.html" %}
+{% include {{ include_src }}
+    value=include.value
+    key=include.key
+    include_path=include_src
+    include_chars=include.indent_chars
+    indent_count=include.indent_count
+%}

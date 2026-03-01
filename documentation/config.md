@@ -10,9 +10,7 @@ This project can be configured to look and behave differently by toggling and se
 The project object can be specified with information related to the software this; this information will appear on the homepage's jumbotron area.
 
 ```yaml
-project:
-  version: 1.0.0
-  download_url: https://github.com/USER/PROJECT/releases
+{% include jekyll-docs-theme/yamlify.html key="project" value=site.project indent_count=1 %}
 ```
 
 | Field          | Description                         |
@@ -25,12 +23,7 @@ project:
 The license object accepts four fields regarding information about the licensing of your software and documentation.
 
 ```yaml
-license:
-  software: MIT License
-  software_url: http://opensource.org/licenses/MIT
-
-  docs: CC BY 3.0
-  docs_url: http://creativecommons.org/licenses/by/3.0/
+{% include jekyll-docs-theme/yamlify.html key="license" value=site.license indent_count=1 %}
 ```
 
 | Field          | Description                                                       |
@@ -45,15 +38,7 @@ license:
 The links object has two subobjects, `header` and `footer`; both of these objects accept an array of elements with a `title` and `url`. The links defined in the `header` object will appear in the navigation of the website and the links in the `footer` will appear at the bottom of the website.
 
 ```yaml
-links:
-  header:
-    - title: GitHub
-      url: https://github.com/allejo/jekyll-docs-theme
-  footer:
-    - title: GitHub
-      url: https://github.com/allejo/jekyll-docs-theme
-    - title: Issues
-      url: https://github.com/allejo/jekyll-docs-theme/issues?state=open
+{% include jekyll-docs-theme/yamlify.html key="links" value=site.links inden_cCount=1 %}
 ```
 
 | Field   | Description                           |
@@ -63,26 +48,12 @@ links:
 
 ## UI
 
-The ui object will contain all the settings in regards to the aesthetics of the website
-
-```yaml
-ui:
-  header:
-    color1: "#080331"
-    color2: "#673051"
-    trianglify: true
-```
-
-| Field               | Description                                                               |
-|:--------------------|:--------------------------------------------------------------------------|
-| `color1` & `color2` | The two colors that will create the gradient of the page header           |
-| `trianglify`        | When set to true, the page header will be a generated triangular pattern  |
+@TODO See dedicated page
 
 ## Analytics
 
 ```yaml
-analytics:
-    google: UA-123456-1
+{% include jekyll-docs-theme/yamlify.html key="analytics" value=site.analytics indent_count=1 %}
 ```
 
 | Field    | Description                                                                   |
@@ -94,16 +65,5 @@ analytics:
 Options for configuring buttons to "like", "tweet" or "star" this site with the respective social media websites.
 
 ```yaml
-social:
-  github:
-    user: allejo
-    repo: jekyll-docs-theme
-  twitter:
-    enabled: false
-    via:
-    hash:
-    account:
-  facebook:
-    enabled: false
-    profileUrl:
+{% include jekyll-docs-theme/yamlify.html key="social" value=site.social indent_count=1 %}
 ```

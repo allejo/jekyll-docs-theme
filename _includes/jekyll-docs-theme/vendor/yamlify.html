@@ -1,46 +1,162 @@
-{%- capture yamlWorkspace %}
-    {% capture newline %}
-    {% endcapture %}
-    {% assign newline = newline | replace: " ", "" %}
-    {% assign indentChars = "  " %}
+{% capture yamlWorkspace %}
+  {% comment %}
+    Copyright (c) 2023 Vladimir "allejo" Jimenez
 
-    {% assign key = include.key %}
-    {% assign value = include.value %}
-    {% assign indentCount = include.indentCount | default: 0 %}
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+  {% endcomment %}
+  {% comment %}
+    Version 1.0.0
+      https://github.com/allejo/jekyll-yamlify
+
+    Usage:
+        {% include yamlify.html key="my_key" value=some_value %}
+
+    Parameters:
+        * value        (any) - any YAML-compatible value that will be written out as prettified YAML
+
+    Optional Parameters:
+        * key          (string) :       ''       - a top-level YAML key to use when printing out the given value
+        * include_path (string) : 'yamilfy.html' - the relative path to this include; use this is you rename the include or put it subfolders
+        * indent_chars (string) :      '  '      - the indentation that will be used for each line
+        * indent_count (int)    :       1        - the amount of times a given value needs to be indented when written
+
+    Output:
+        A pretty printed representation of a given value in YAML compatible format
+  {% endcomment %}
+
+  {% capture NEWLINE %}
+  {% endcapture %}
+  {% assign NEWLINE = NEWLINE | replace: " ", "" %}
+
+  <!--
+  This is a recursive include, so we need the name of it so we can include it
+  recursively easily.
+  -->
+  {% assign _self = include.include_path | default: "yamlify.html" %}
+
+  {% assign value = include.value %}
+  {% assign value_json_type = value | jsonify | slice: 0 %}
+
+  {% assign indent = "" %}
+  {% assign indent_chars = include.indent_chars | default: "  " %}
+  {% assign indent_count = include.indent_count | default: 1 %}
+
+  {% if include.key %}
+    {% capture output %}{{ output }}{{ include.key }}:{{ NEWLINE }}{% endcapture %}
+  {% else %}
+    {% capture output %}{% endcapture %}
+  {% endif %}
+
+  {% if value_json_type == '"' %}
+    <!-- [ null, {{ value }} ] -->
+    {% assign child_array = "" | split: "/" | push: nil | push: value %}
+
+    <!-- [ [null, {{ value }}] ] -->
+    {% assign parent_array = "" | split: "/" | push: child_array %}
+
+    {% assign value = parent_array %}
+  {% endif %}
+
+  <!--
+  The `value` object may be a hashmap; looping through a hashmap in Liquid
+  allows you to access the key at index 0 and the value at index 1.
+
+  The alternative, `value` is a 2D array that would match the same syntax as
+  when we're iterating through a hashmap.
+  -->
+  {% for entry in value %}
+    <!-- Generate the indentation needed for the current level of printing -->
+    <!-- Restore from include.* since recursive includes corrupt shared variables -->
+    {% assign indent_count = include.indent_count | default: 1 %}
+    {% assign indent_chars = include.indent_chars | default: "  " %}
     {% assign indent = "" %}
+    {% for i in (1..indent_count) %}
+      {% capture indent %}{{ indent }}{{ indent_chars }}{% endcapture %}
+    {% endfor %}
 
-    {% if key %}
-        {% capture output %}{{ key }}:{{ newline }}{% endcapture %}
+    {% assign yaml_key = entry[0] %}
+    {% assign yaml_value = entry[1] %}
+
+    <!--
+    A semi-reliable way of determining different data types of a variable. This
+    works by converting a variable into JSON and then selecting the first
+    character of that JSON output. Then we make assumptions based on those
+    characters.
+    -->
+    {% assign first_char_json = yaml_value | jsonify | slice: 0 %}
+    {% if yaml_value == nil or first_char_json == "null" %}
+      {% assign data_type = "null" %}
+    {% elsif first_char_json == '"' %}
+      {% assign data_type = "string" %}
+    {% elsif first_char_json == '[' %}
+      {% assign data_type = "array" %}
+    {% elsif first_char_json == '{' %}
+      {% assign data_type = "object" %}
+    {% elsif first_char_json == 't' or first_char_json == 'f' %}
+      {% assign data_type = "boolean" %}
     {% else %}
-        {% assign output = "" %}
+      {% assign data_type = "number" %}
     {% endif %}
 
     <!--
-    The `value` object should be a hash map. Looping through a hashmap in Liquid
-    allows you to access the key at index 0 and the value at index 1.
+    These wrapper variables exist solely for convenient debugging. For example,
+    adding `# {{ data_type }}` to `line_ending` will add a comment that shows
+    the data type for each specific line.
     -->
-    {% for entry in value %}
-        {% for i in (1..indentCount) %}
-            {% capture indent %}{{ indent }}{{ indentChars }}{% endcapture %}
+    {% capture line_start %}{{ yaml_key }}:{% endcapture %}
+    {% capture line_ending %}{{ NEWLINE }}{% endcapture %}
+
+    <!--
+    Our YAML key will be nil whenever we're given an element from an array.
+    -->
+    {% if yaml_key == nil %}
+      {% capture line_start %}{{ indent_chars }}-{% endcapture %}
+    {% endif %}
+
+    {% assign new_indent_count = indent_count | plus: 1 %}
+
+    {% case data_type %}
+      {% when "string" %}
+        {% capture output %}{{ output }}{{ indent }}{{ line_start }} "{{ yaml_value }}"{{ line_ending }}{% endcapture %}
+
+      {% when "boolean", "number" %}
+        {% capture output %}{{ output }}{{ indent }}{{ line_start }} {{ yaml_value }}{{ line_ending }}{% endcapture %}
+
+      {% when "array" %}
+        {% capture output %}{{ output }}{{ indent }}{{ line_start }}{{ line_ending }}{% endcapture %}
+        {% for arrayItem in yaml_value %}
+          {% capture output -%}{{ output }}{% include {{ _self }} include_path=_self value=arrayItem indent_count=new_indent_count %}{%- endcapture %}
         {% endfor %}
 
-        {% assign yamlKey = entry[0] %}
-        {% assign yamlValue = entry[1] %}
-        {% capture dataType %}{% include jekyll-docs-theme/vendor/data_type.html value=yamlValue %}{% endcapture %}
+      {% when "object" %}
+        {% capture output %}{{ output }}{{ indent }}{{ line_start }}{{ line_ending }}{% include {{ _self }} include_path=_self value=yaml_value indent_chars=include.indent_chars indent_count=new_indent_count %}{% endcapture %}
+    {% endcase %}
+  {% endfor %}
 
-        {% case dataType %}
-            {% when "string" %}
-                {% capture output %}{{ output }}{{ indent }}{{ yamlKey }}: "{{ yamlValue }}"{{ newline }}{% endcapture %}
-
-            {% when "boolean", "number" %}
-                {% capture output %}{{ output }}{{ indent }}{{ yamlKey }}: {{ yamlValue }}{{ newline }}{% endcapture %}
-
-            {% when "object" %}
-                {% assign newIndentCount = indentCount | plus: 1 %}
-                {% capture output %}{{ output }}{{ indent }}{{ yamlKey }}:{{ newline }}{% include jekyll-docs-theme/vendor/yamlify.html value=yamlValue indentCount=newIndentCount %}{% endcapture %}
-        {% endcase %}
-
-        {% assign indentCount = include.indentCount %}
-        {% assign indent = "" %}
-    {% endfor %}
-{% endcapture -%}{{- output -}}
+  <!--
+  Only the top-most `include` call will have the `key` argument set. Let's strip
+  any extra whitespace that may have snuck into the final output.
+  -->
+  {% if include.key %}
+    {% assign output = output | strip %}
+  {% endif %}
+{% endcapture %}{{- output -}}{% assign output = "" %}{% assign yamlWorkspace = "" -%}

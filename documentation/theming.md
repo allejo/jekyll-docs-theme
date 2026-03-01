@@ -8,5 +8,5 @@ All color theming capabilities within this team can be configured via the `ui` f
 ## Default Configuration
 
 ```yaml
-{% include jekyll-docs-theme/vendor/yamlify.html key="ui" value=site.ui indentCount=1 %}
+{% include jekyll-docs-theme/yamlify.html key="ui" value=site.ui indent_count=1 %}
 ```
